@@ -1,0 +1,89 @@
+import { HttpErrorResponse } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Meta, Title } from '@angular/platform-browser';
+import { Courses } from 'src/app/model/courses.model';
+import { CoursesService } from 'src/app/services/courses.service';
+import { MetaService } from 'src/app/services/meta.service';
+import { environment } from 'src/environments/environment';
+
+@Component({
+  selector: 'app-client',
+  templateUrl: './client.component.html',
+  styleUrls: ['./client.component.scss']
+})
+export class ClientComponent {
+
+  imgUrl:any=environment.imgUrl;
+  constructor(
+    private _courses:CoursesService, 
+    private _snackbar:MatSnackBar, 
+    private _meta:Meta, 
+    private _title:Title,
+    // private imageService:ImageProcessingService,
+    private shareService:MetaService
+    ) { }
+  courses:Courses[] = [
+    {
+      cId:0,
+      title: '',
+      description: '',
+      thumbnail: '',
+      date: '',
+      status: false,
+      url:'',
+      rating:'',
+      length: 0,
+      price: 0,
+      imageFiles:[{
+      file:File,
+      url: ''
+    }]
+  }
+  ];
+  loader:any = false;
+  spinner:boolean = false;
+
+  ngOnInit(): void {
+    // this._meta.updateTag({name:'description',content:'Top Free Courses Sciaku ia a Learning platform for Engineering Students'});
+    this.getAllCourses();
+    // console.log(this.course.length);
+  }
+
+  getAllCourses(){
+    this._courses.getAllActiveCourses()
+      // .pipe(
+      //   map((x:Courses[], i) => x.map((course:Courses) => this.imageService.createCoursesImages(course)))
+      // )
+      .subscribe(
+        (res: Courses[]) => {
+          this.courses = res;
+          console.log(this.courses);
+          
+          // this.shareService.setFacebookTags(
+          //   window.document.location.href,
+          //   this.title,
+          //   this.title,
+          //   this.courses[0].thumbnail);
+          // console.log(window.document.location.href,
+          //   this.title,
+          //   this.title,
+          //   this.courses[0].thumbnail); 
+        this.spinner = true;
+        if (this.courses.length != 0) {
+          this.loader = true;
+        }
+        else{
+          this.loader = false;
+        }
+      },
+      (error:HttpErrorResponse)=>{
+        console.log(error);
+        this._snackbar.open('Error in loading data !!','Close',{
+          duration:2000,
+        });
+        // Swal.fire('Error','Error in loading data','error');
+      }
+    )
+  }
+}

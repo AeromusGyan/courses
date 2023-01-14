@@ -1,0 +1,102 @@
+<!--header-->
+<header id="site-header" class="fixed-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark stroke">
+        <h1>
+          <a class="navbar-brand" href="">
+            <span class="fa fa-diamond"></span>Sciaku <span class="logo">Journey to success</span></a>
+        </h1>
+  
+        <!-- if logo is image enable this   
+          <a class="navbar-brand" href="#index.html">
+              <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+          </a> -->
+        <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+          data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+          <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mx-lg-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item @@about__active">
+              <a class="nav-link" routerLink="/about">About</a>
+            </li>
+            <li class="nav-item @@courses__active">
+              <a class="nav-link" routerLink="/courses">Courses</a>
+            </li>
+            <li class="nav-item dropdown @@pages__active">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Services <span class="fa fa-angle-down"></span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item @@b__active" routerLink="/blogs">Blogs</a>
+                <a class="dropdown-item @@bs__active" routerLink="/books">Books</a>
+                <!-- <a class="dropdown-item @@error__active" href="error.html"> 404 Error page</a>
+                <a class="dropdown-item" href="landing-single.html"> Landing page</a> -->
+              </div>
+            </li>
+            <li class="nav-item @@contact__active">
+              <a class="nav-link" routerLink="/contact">Contact</a>
+            </li>
+          </ul>
+  
+          <!--/search-right-->
+          <div class="search-right">
+            <a href="#search" title="search"><span class="fa fa-search" aria-hidden="true"></span></a>
+            <!-- search popup -->
+            <div id="search" class="pop-overlay">
+              <div class="popup">
+  
+                <form action="https://demo.w3layouts.com/demos_new/template_demo/18-03-2021/study-course-starter-demo_Free/1612283260/web/error.html" method="GET" class="search-box">
+                  <input type="search" placeholder="Search" name="search" required="required" autofocus="">
+                  <button type="submit" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
+                </form>
+  
+              </div>
+              <a class="close" href="#close">×</a>
+            </div>
+            <!-- /search popup -->
+          </div>
+          <div class="top-quote mr-lg-2 text-center" *ngIf="!isLoggedin">
+            <a routerLink="/login" class=" login mr-2"><span class="fa fa-user"></span> login</a>
+          </div>
+          <ul class="navbar-nav mx-lg-auto">
+            <li class="nav-item dropdown @@pages__active" *ngIf="isLoggedin">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                {{user.firstname}} {{user.lastname}}<span class="fa fa-angle-down"></span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" routerLink="/profile"><span class="fa fa-user"></span> Profile</a>
+                <a *ngIf="user.authorities[0].authority == 'ADMIN'" class="dropdown-item" routerLink="/admin"><span class="fa fa-user"></span> Admin Dashboard</a>
+                <!-- <a class="dropdown-item @@bs__active" href="blog-single.html">Blog single</a>
+                <a class="dropdown-item @@error__active" href="error.html"> 404 Error page</a> -->
+                <a class="dropdown-item" (click)="logout()"><span class="fa fa-sign-out"></span> Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- toggle switch for light and dark theme -->
+        <div class="mobile-position">
+          <nav class="navigation">
+            <div class="theme-switch-wrapper">
+              <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox">
+                <div class="mode-container py-1">
+                  <i class="gg-sun"></i>
+                  <i class="gg-moon"></i>
+                </div>
+              </label>
+            </div>
+          </nav>
+        </div>
+        <!-- //toggle switch for light and dark theme -->
+      </nav>
+    </div>
+  </header>

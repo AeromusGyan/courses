@@ -1,0 +1,91 @@
+<!-- about breadcrumb -->
+<section class="w3l-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-5">
+        <div class="container pt-lg-5 pt-3 p-lg-4 pb-3">
+            <h2 class="title mt-5 pt-lg-5 pt-sm-3">Signup / Registration</h2>
+        </div>
+    </div>
+</section>
+<!-- //about breadcrumb -->
+<section class="w3l-loginblock pb-5" id="contact">
+    <div class="contacts-9 pb-lg-5 pb-md-4">
+        <div class="container">
+            <div class="top-map">
+                <div class="map-content-9">
+                    <form [formGroup]="memberForm" class="">
+                        <div class="form-grid signupgrids">
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input type="username" name="username" formControlName="username" matInput
+                                    placeholder="Enter here">
+                                <mat-icon matPrefix>account_circle</mat-icon>
+                                <mat-error>Username is required</mat-error>
+                                <!-- <mat-hint>Hint</mat-hint> -->
+                            </mat-form-field>
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Firstname</mat-label>
+                                <input type="firstname" name="firstname" formControlName="firstname" matInput
+                                    placeholder="Enter here">
+                                <mat-icon matPrefix>account_circle</mat-icon>
+                                <mat-error>Firstname is required</mat-error>
+                                <!-- <mat-hint>Hint</mat-hint> -->
+                            </mat-form-field>
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Lastname</mat-label>
+                                <input type="lastname" name="lastname" formControlName="lastname" matInput
+                                    placeholder="Enter here">
+                                <mat-icon matPrefix>account_circle</mat-icon>
+                                <!-- <mat-hint>Hint</mat-hint> -->
+                            </mat-form-field>
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Email Address</mat-label>
+                                <input type="email" name="email" formControlName="email" matInput placeholder="Enter here">
+                                <mat-icon matPrefix>account_circle</mat-icon>
+                                <mat-error>Email is required</mat-error>
+                                <!-- <mat-hint>Hint</mat-hint> -->
+                            </mat-form-field>
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Phone Number</mat-label>
+                                <input type="phone" name="contact" formControlName="contact" matInput
+                                    placeholder="Enter here">
+                                <mat-icon matPrefix>account_circle</mat-icon>
+                                <mat-error>Phone Number is required</mat-error>
+                                <!-- <mat-hint>Hint</mat-hint> -->
+                            </mat-form-field>
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>City</mat-label>
+                                <input type="address" name="address" formControlName="city" matInput
+                                    placeholder="Enter here">
+                                <mat-icon matPrefix>account_circle</mat-icon>
+                                <mat-error>Phone Number is required</mat-error>
+                                <!-- <mat-hint>Hint</mat-hint> -->
+                            </mat-form-field>
+                            
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input [type]="hide ? 'password' : 'text'" matInput formControlName="password">
+                                <mat-icon matPrefix>lock</mat-icon>
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                    [attr.aria-pressed]="hide">
+                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <mat-error>Password should be minimum 6 characters</mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Confirm Password</mat-label>
+                                <input [type]="chide ? 'password' : 'text'" matInput formControlName="confirm_password">
+                                <mat-icon matPrefix>lock</mat-icon>
+                                <button mat-icon-button matSuffix (click)="chide = !chide" [attr.aria-label]="'Hide password'"
+                                    [attr.aria-pressed]="chide">
+                                    <mat-icon>{{chide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                                <mat-error>Password should be minimum 6 characters</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-style mt-4" (click)="onSubmit()">Signup / Regiser now </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

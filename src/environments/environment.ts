@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl : 'http://localhost:8080',
-  // baseUrl : 'https://api.sciaku.com',
+  // baseUrl : 'http://localhost:8080',
+  baseUrl : 'https://api.sciaku.com',
   imgUrl : 'https://sciaku.com/assets/images/'
 };
 

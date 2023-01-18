@@ -21,6 +21,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { authInterceptorProviders } from './services/auth.interceptor';
+import { ProfileComponent } from './pages/client/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { authInterceptorProviders } from './services/auth.interceptor';
     CourseLectureComponent,
     ErrorComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -3,18 +3,18 @@
     <div class="breadcrumb-bg breadcrumb-bg-about py-5">
         <div class="container pt-lg-5 pt-3 p-lg-4 pb-3">
             <h2 class="title mt-5 pt-lg-5 pt-sm-3">{{course[0].courses.title}} </h2>
-            <ul class="breadcrumbs-custom-path pb-sm-5 pb-4 mt-2 text-center mb-md-5">
+            <!-- <ul class="breadcrumbs-custom-path pb-sm-5 pb-4 mt-2 text-center mb-md-5">
                 <li><a href="index.html">Home</a></li>
                 <li class="active"> / pages </li>
                 <li class="active"> / blog single page </li>
-            </ul>
+            </ul> -->
         </div>
     </div>
-    <div class="waveWrapper waveAnimation">
+    <!-- <div class="waveWrapper waveAnimation">
         <svg viewBox="0 0 500 150" preserveAspectRatio="none">
             <path d="M-5.07,73.52 C149.99,150.00 299.66,-102.13 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none;"></path>
         </svg>
-    </div>
+    </div> -->
 </section>
 <!-- //about breadcrumb -->
 <!-- single post -->
@@ -33,7 +33,7 @@
                             <mat-panel-title>Lec:- {{i+1}}
                             </mat-panel-title>
                             <mat-panel-description>
-                              <!-- Currently I am {{panelOpenState ? 'open' : 'closed'}} --> 
+                              <!-- Currently I am {{panelOpenState ? 'open' : 'closed'}} --> {{c.v_title}}
                             </mat-panel-description>
                           </mat-expansion-panel-header>
                           <!-- <p>I'm visible because I am open</p> -->
@@ -68,10 +68,10 @@
                         <li>
                             <p class="m-0 mr-4">Share this post :</p>
                         </li>
-                        <li><a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a></li>
-                        <li><a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a></li>
-                        <li><a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a></li>
-                        <li><a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a></li>
+                        <li><a class="facebook"><span class="fa fa-facebook"></span></a></li>
+                        <li><a class="twitter"><span class="fa fa-twitter"></span></a></li>
+                        <li><a  class="instagram"><span class="fa fa-instagram"></span></a></li>
+                        <li><a class="linkedin"><span class="fa fa-linkedin"></span></a></li>
                     </ul>
                 </div>
                 <!-- <div class="new-posts clearfix">
@@ -86,14 +86,14 @@
                     <div class="comments-grids">
                         <div class="media-grid">
                             <div class="media">
-                                <a class="comment-img" href="#url"><img src="assets/images/team1.jpg"
+                                <a class="comment-img" ><img src="assets/images/team1.jpg"
                                         class="img-responsive" width="100px" alt="placeholder image"></a>
                                 <div class="media-body comments-grid-right">
                                     <h5>Jack Harry</h5>
                                     <ul class="p-0 comment">
-                                        <li class="">Oct 29th, 2020 at 11:00 am</li>
+                                        <li class="">Oct 29th, 2022 at 11:00 am</li>
                                         <li>
-                                            <a href="#comment" class="">Reply</a>
+                                            <a  class="">Reply</a>
                                         </li>
                                     </ul>
                                     <p>Mattis ut hendrerit non, facilisis eget mauris. Sed ultricies nec purus quis
@@ -104,28 +104,28 @@
                         </div>
                         <div class="media-grid">
                             <div class="media">
-                                <a class="comment-img" href="#url"><img src="assets/images/team2.jpg"
+                                <a class="comment-img" ><img src="assets/images/team2.jpg"
                                         class="img-responsive" width="100px" alt="placeholder image"></a>
                                 <div class="media-body comments-grid-right">
                                     <h5>Charlie</h5>
                                     <ul class="p-0 comment">
-                                        <li class="">Oct 29th, 2020 at 05:45 pm </li>
+                                        <li class="">Oct 29th, 2022 at 05:45 pm </li>
                                         <li>
-                                            <a href="#comment" class="">Reply</a>
+                                            <a  class="">Reply</a>
                                         </li>
                                     </ul>
                                     <p>Mattis ut hendrerit non, facilisis eget mauris. Sed ultricies nec purus quis
                                         tempor. Phasellus eu nec purus quis tempor.
                                     </p>
                                     <div class="media mt-4 mb-0 border-0 px-0">
-                                        <a class="comment-img" href="#url"><img src="assets/images/team3.jpg"
+                                        <a class="comment-img" ><img src="assets/images/team3.jpg"
                                                 class="img-responsive" width="100px" alt="placeholder image"></a>
                                         <div class="media-body comments-grid-right">
                                             <h5>Jack Harry</h5>
                                             <ul class="p-0 comment">
-                                                <li class="">Oct 30th, 2020 at 04:00 pm</li>
+                                                <li class="">Oct 30th, 2022 at 04:00 pm</li>
                                                 <li>
-                                                    <a href="#comment" class="">Reply</a>
+                                                    <a  class="">Reply</a>
                                                 </li>
                                             </ul>
                                             <p>Mattis ut hendrerit non, facilisis eget mauris. Sed ultricies nec purus
@@ -141,7 +141,7 @@
                 </div>
                 <div class="leave-comment-form" id="comment">
                     <h3 class="aside-title">Leave a reply</h3>
-                    <form action="#" method="post">
+                    <form >
                         <div class="input-grids">
                             <div class="form-group">
                                 <input type="text" name="Name" class="form-control" placeholder="Your Name" required="">
@@ -159,7 +159,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="item mt-5 w3l-grids-block-5 w3l-courses">
+                <!-- <div class="item mt-5 w3l-grids-block-5 w3l-courses">
                     <h3 class="aside-title">Maybe you are interested in </h3>
                     <div class="row w3l-blog">
                         <div class="col-md-6 item">
@@ -233,7 +233,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

@@ -1,12 +1,12 @@
 import { isPlatformBrowser } from '@angular/common';
-import { Component, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, PLATFORM_ID, Inject, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'sciaku-courses';
   constructor(
     @Inject(PLATFORM_ID) private platformId: object
